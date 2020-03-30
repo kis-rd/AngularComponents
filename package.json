@@ -1,14 +1,14 @@
 {
-  "name": "angularcomponents",
+  "name": "kis-ngtools",
   "version": "0.0.0",
   "scripts": {
-    "prepare": "echo \"build project \" && npm run build",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "prepare":"ng build kisNgMaterial"
   },
   "private": true,
   "dependencies": {
