@@ -1,0 +1,92 @@
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-table {
+  font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
+  vertical-align: middle;
+  width: 100%;
+}
+.mat-table .mat-row {
+  border-bottom: 5px solid #ddd;
+  height: auto;
+}
+
+.mat-table .mat-cell {
+  border-bottom: 1px solid #ddd;
+  font-size: 1em;
+  font-weight: bold;
+  height: auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-table .mat-cell:before {
+  content: attr(data-label);
+  float: left;
+  display: block;
+  margin: 0 auto;
+  text-align: justify;
+  text-justify: inter-word;
+  font-weight: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  max-width: 50%;
+  font-size: 0.85em;
+}
+
+.mat-table .mat-cell:after {
+  content: "";
+  display: table;
+  clear: both;
+  overflow: hidden;
+}
+.mat-table .mat-header-row {
+  height: 0px;
+}
+
+@media screen and (min-width: 992px) {
+  .mat-table .mat-header-row {
+    height: auto;
+  }
+  .mat-table .mat-row {
+    border-bottom: 1px solid #ddd;
+    height: auto;
+  }
+
+  .mat-table .mat-cell {
+    border-bottom: 0px solid #ddd;
+    font-weight: normal;
+    font-size: 1em;
+    height: auto;
+  }
+
+  .mat-table .mat-cell:before {
+    content: "";
+    display: none;
+    height: 0px;
+    width: 0px;
+  }
+
+  .mat-table .mat-cell:after {
+    content: "";
+    display: none;
+    height: 0px;
+    width: 0px;
+  }
+  .mat-table .mat-cell:last-child {
+    border-bottom: 0;
+  }
+  .mat-table .mat-cell:first-child {
+    margin: auto;
+  }
+  .mat-header-cell {
+    font-size: 1.25em;
+  }
+}

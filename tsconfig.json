@@ -1,0 +1,37 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "downlevelIteration": true,
+    "importHelpers": true,
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "paths": {
+      "@angular/*": [
+        "./node_modules/@angular/*"
+      ],
+      "jquery/*": ["./node_modules/jquery/dist/*"],
+      "bootstrap/*":["./node_modules/bootstrap/dist/*"],
+      "hammerjs/*":["./node_modules/hammerjs/*"],
+      "kisNgMaterial": [
+        "dist/kis-ng-material"
+      ],
+      "kisNgMaterial/*": [
+        "dist/kis-ng-material/*"
+      ]
+    }
+  }
+}

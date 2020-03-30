@@ -1,0 +1,38 @@
+<div class="p-1">
+  <mat-form-field>
+    <!--search value input -->
+    <input matInput (keyup)="applyFilter($event.target.value)" [placeholder]="'filter'" />
+  </mat-form-field>
+  <div>
+    <div class="card">
+      <div class="card-body text-center">
+        <h4 class="card-title text-muted">{{ title }}</h4>
+      </div>
+    </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container *ngFor="let column of cols">
+        <!-- build Column of table-->
+        <ng-container matColumnDef="{{ column.field }}">
+          <!--  matColumnDef provide unique identifier -->
+          <th class="p-lg-2 text-break text-lg-center" mat-header-cell *matHeaderCellDef>{{ column.name }}</th>
+          <td class="p-2 d-block d-lg-table-cell text-break text-right text-lg-center" mat-cell *matCellDef="let element" [attr.data-label]="column.name">
+            {{
+              utils.pFormatValue(element, column) | formatData: utils.dateFormat
+            }}
+          </td>
+        </ng-container>
+      </ng-container>
+      <tr mat-header-row class="d-none d-lg-table-row"  *matHeaderRowDef="columnsToDisplay"></tr>
+      <!-- control header row -->
+      <!-- list ot columns we want to display (list from matColumnDef)-->
+      <tr mat-row [ngClass]="{
+      hovered: row.hovered,
+      'row-text-color': selection.isSelected(row),
+      highlighted: selection.isSelected(row)
+    }" *matRowDef="let row; columns: columnsToDisplay" #rowRef (click)="selection.select(row);
+      selection.isSelected(row) ? selectionActions(row) : null" [style.cursor]="row.hovered ? 'pointer' : null" (mouseover)="row.hovered = true" (mouseout)="row.hovered = false"
+        class="d-block d-lg-table-row"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[10, 15]" [pageSize]="4" showFirstLastButtons></mat-paginator>
+  </div>
+</div>
